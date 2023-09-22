@@ -1,28 +1,5 @@
 // gatsby-node.js
 
-// Fix for Error: Type with name "WpBlockAttributesObject" does not exists
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  const typeDefs = `
-    type WpBlockAttributesObject {
-      foobar: String
-    },
-    type WpJetpackCookieConsentBlockAttributes {
-      foobar: String
-    },
-    type WpJetpackCookieConsentBlock {
-      foobar: String
-    },
-    type WpCoreFreeformBlockAttributes {
-      foobar: String,
-    }
-    type WpCoreFreeformBlock {
-      foobar: String,
-    }
-  `;
-  createTypes(typeDefs);
-};
-
 exports.createPages = async ({ graphql, actions }) => {
 
   const wpPages = await getPages(graphql);
@@ -35,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (isFrontPage) {
       return actions.createPage({
         path: uri,
-        component: require.resolve("./src/templates/homepage-template.js"),
+        component: require.resolve("./src/templates/default-page-template.js"),
         context: {
           id: id,
         },

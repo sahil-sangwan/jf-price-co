@@ -3,15 +3,9 @@ import { graphql } from 'gatsby';
 import parse from "html-react-parser";
 import Layout from '../components/layout/layout';
 import HomepageSegment from '../components/homepageSegment';
-import Card from '../components/imageCard';
 import ColumnGroup from '../components/columns';
 import { PageButton } from '../components/pageNavButton';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
-import Zoom from 'react-medium-image-zoom';
-import ProjectsImage from "../images/slides/Projects.jpg";
-import VeneerImage from "../images/slides/VeneerStone.jpg";
-import ProductsImage from "../images/slides/ProductDisplay.jpg";
-import BeautyShot from "../images/slides/homepage_beautyshot.jpg";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
@@ -36,11 +30,11 @@ const Slideshow = () => {
             <Slide>
                 <div style={slideStyle}>
                     {/* <StaticImage style={{ width: '100%', aspectRatio: '16/9' }} objectPosition="center" src={ProjectsImage} alt="Plymouth Quarries" layout="constrained" loading="eager" /> */}
-                    <img src={ProjectsImage} alt="Plymouth Quarries" style={{ width: '800px', height: '600px' }} />
+                    {/* <img src={ProjectsImage} alt="Plymouth Quarries" style={{ width: '800px', height: '600px' }} /> */}
                 </div>
                 <div style={slideStyle}>
                     {/* <StaticImage style={{ width: '100%', aspectRatio: '16/9' }} objectPosition="center" src={ProjectsImage} alt="Plymouth Quarries" layout="constrained" loading="eager" /> */}
-                    <img src={VeneerImage} alt="Plymouth Quarries" style={{ width: '800px', height: '600px' }} />
+                    {/* <img src={VeneerImage} alt="Plymouth Quarries" style={{ width: '800px', height: '600px' }} /> */}
                 </div>
                 {/* <div style={slideStyle}>
                     <StaticImage style={{ width: '100%', aspectRatio: '16/9' }} objectPosition="center" src={VeneerImage} alt="Plymouth Quarries" layout="constrained" loading="eager" />
@@ -60,10 +54,6 @@ const Slideshow = () => {
 const HomepageTemplate = ({ data: { productPostList, commercialPostList, mediaPostList, servicesPostList } }) => {
     return (
         <Layout>
-            <StaticImage objectPosition="center" src="../images/PQlogoHeaderV4.png" alt="Plymouth Quarries" layout="constrained" />
-            <StaticImage style={{ width: '100%', aspectRatio: '16/9' }} objectPosition="center" src="../images/slides/homepage_beautyshot.jpg" alt="Plymouth Quarries" layout="constrained" />
-            {/* <Slideshow/> */}
-
             <p style={{ color: 'white', fontSize: '18px', marginBottom: '55px' }}>
                 Plymouth Quarries of Hingham, MA, is a vibrant modern stone quarry supplying masonry, hardscape, and landscape materials since 1915.
                 We supply the right stone and earth products to create the enduring look and function you want; from the simple weekend homeowner projects
