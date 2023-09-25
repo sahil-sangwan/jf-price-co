@@ -195,7 +195,7 @@
 .wp-block-table td,
 .wp-block-table th {
   padding: 0.5em;
-  border: 1px solid;
+  border: 0px solid;
   word-break: normal;
 }
 .wp-block-table figcaption {

@@ -35,6 +35,14 @@ exports.createPages = async ({ graphql, actions }) => {
               id: id,
             }
           })
+          case 'contact':
+            return actions.createPage({
+              path: uri,
+              component: require.resolve("./src/templates/contact-page-template.js"),
+              context: {
+                id: id,
+              }
+            })
         default:
           return actions.createPage({
             path: uri,

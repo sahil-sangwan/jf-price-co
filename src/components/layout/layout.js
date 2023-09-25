@@ -94,9 +94,19 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: black;
   }
+  table {
+    border-collapse: collapse;
+    border: 0;
+  }
   td {
     vertical-align:top;
     padding:2dvw;
+    border-collapse: collapse;
+    border: 0;
+  }
+  tr {
+    border-collapse: collapse;
+    border: 0;
   }
   body {
     font-size:16px;
