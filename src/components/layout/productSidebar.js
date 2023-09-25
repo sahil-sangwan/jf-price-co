@@ -2,15 +2,18 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from 'styled-components';
 import Layout from "./layout";
+import { AiOutlineMail } from "@react-icons/all-files/ai/AiOutlineMail";
+// import { TbMap2 } from "@react-icons/all-files/tb";
+import { AiOutlineFacebook } from "@react-icons/all-files/ai/AiOutlineFacebook";
 
 const ProductSidebar = ({ children }) => {
-    const {
-      productPostList: {
-            posts: {
-                nodes
-            },
-        },
-    } = useStaticQuery(graphql`
+  const {
+    productPostList: {
+      posts: {
+        nodes
+      },
+    },
+  } = useStaticQuery(graphql`
     query {
       productPostList: wpCategory(name: {eq: "Products"}) {
           posts {
@@ -23,23 +26,33 @@ const ProductSidebar = ({ children }) => {
     }
     `);
 
-    return (
-        <React.Fragment>
-            <Layout>
-                <PostWrapper>
-                    <MainNav>
-                        {nodes.map(post => {
-                            const { title, slug } = post;
-                            return (
-                                <NavButton href={`/products/${slug}`}><p>{title}</p></NavButton>
-                            );
-                        })}
-                    </MainNav>
-                    <main style={{ width: '50vw', paddingLeft: '1vw' }}>{children}</main>
-                </PostWrapper>
-            </Layout>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <Layout>
+        <PostWrapper>
+          <MainNav>
+            <h2>(781) 335-1021</h2>
+            <span style={{whiteSpace: "nowrap"}}>
+                        <p><AiOutlineMail style={{whiteSpace: "nowrap"}}/> <a href="mailto:Info@JFPriceCo.com">email</a></p>
+                    </span> 
+                    <span>
+                        <p><AiOutlineFacebook/> <a href='https://www.facebook.com/JFPriceCompany'>Join Us</a></p>
+                    </span>
+            {/* <TbMap2/> */}
+            <br></br>
+            <h2>Products</h2>
+            {nodes.map(post => {
+              const { title, slug } = post;
+              return (
+                <NavButton href={`/products/${slug}`}><p>{title}</p></NavButton>
+              );
+            })}
+          </MainNav>
+          <main style={{ width: '50vw', paddingLeft: '1vw' }}>{children}</main>
+        </PostWrapper>
+      </Layout>
+    </React.Fragment>
+  );
 }
 
 const PostWrapper = styled.div`
@@ -47,6 +60,8 @@ const PostWrapper = styled.div`
   display:flex;
   flex-flow: row nowrap;
   align-items: flex-start;
+  background: #FFFFFF;
+  padding:1vh 3vw;
 `
 
 const MainNav = styled.div`
@@ -73,8 +88,7 @@ const MainNav = styled.div`
 const NavButton = styled.a`
 text-align:left;
 text-decoration: none;
-color:white;
-padding:1vh 0.5vw;
+padding:0.25vh 0.5vw;
 &:hover {
     color:#ECC570;
 }

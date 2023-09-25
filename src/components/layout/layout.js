@@ -54,15 +54,10 @@ const Layout = ({ isHomePage, children }) => {
         })}
       </MainNav>
       <main>{children}</main>
-      <hr></hr>
-      <footer style={{ display: 'flex', justifyContent: 'space-between', color: 'white', paddingBottom:'1vh', fontSize:'12px', alignContent:'center'}}>
+      <footer style={{ display: 'flex', justifyContent: 'center', color: 'white', paddingTop:'5vh', paddingBottom:'1vh', fontSize:'12px', alignContent:'center'}}>
         <div>
-          © {new Date().getFullYear()}, Site by DuVoisin Design
-        </div>
-        <div>
-          <a href='https://www.instagram.com/plymouthquarriesllc/' style={{color:'white'}}><AiOutlineInstagram style={{ height: '5vh', width: '5vw' }} /></a>
-          <a href='https://www.youtube.com/results?search_query=Plymouth+quarries' style={{color:'white'}}><AiOutlineYoutube style={{ height: '5vh', width: '5vw' }} /></a>
-          <a href='https://www.facebook.com/PlymouthQuarries/' style={{color:'white'}}><AiOutlineFacebook style={{ height: '5vh', width: '5vw' }} /></a>
+          © {new Date().getFullYear()} JF Price. Designed by DuvoisinDesign
+
         </div>
       </footer>
     </React.Fragment>
@@ -70,11 +65,13 @@ const Layout = ({ isHomePage, children }) => {
 };
 
 const MainNav = styled.div`
-  margin:auto;
+  margin:0px 0px 5vh 0px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  background: black;
+  color: white;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -95,15 +92,18 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: white;
+    color: black;
+  }
+  td {
+    vertical-align:top;
+    padding:2dvw;
   }
   body {
     font-size:16px;
     font-family:arial;
     font-style:normal;
     font-weight:400;
-    color:white;
-    background: #7D7C7A;
+    background: #998674;
     position:center;
     display:flex;
     flex-flow:column nowrap;

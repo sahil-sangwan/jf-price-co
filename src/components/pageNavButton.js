@@ -14,11 +14,10 @@ text-decoration: none;
 const MainButton = styled.a`
 white-space:nowrap;
 text-align:center;
-padding: 1vh 1vw;
+padding: 0vh 1vw;
 text-decoration: none;
 color: white;
 &:hover {
-    color: #ECC570;
     font-size: 18px;
 }
 `

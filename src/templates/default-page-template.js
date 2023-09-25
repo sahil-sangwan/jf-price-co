@@ -10,8 +10,7 @@ const DefaultPageTemplate = ({ data: { wpPage } }) => {
 
     return (
         <Layout>
-            <h1 style={{paddingLeft:'150px', paddingRight:'150px', textAlign:'center'}}>{title}</h1>
-            <div style={{paddingLeft:'150px', paddingRight:'150px' }} dangerouslySetInnerHTML={{ __html: content }}></div>
+            <div style={{background:'#FFFFFF'}} dangerouslySetInnerHTML={{ __html: content }}></div>
         </Layout>
     );
 };

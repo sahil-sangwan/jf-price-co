@@ -3,7 +3,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://3.87.236.65/graphql`,
+        url: `http://44.216.237.232/graphql`,
       },
     },
     {

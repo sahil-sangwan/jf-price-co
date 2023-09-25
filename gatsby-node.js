@@ -27,22 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
               id: id,
             },
           });
-        case 'fireplaces':
-          return actions.createPage({
-            path: uri,
-            component: require.resolve("./src/templates/fireplace-landing-template.js"),
-            context: {
-              id: id,
-            }
-          })
-        case 'commercial':
-          return actions.createPage({
-            path: uri,
-            component: require.resolve("./src/templates/commercial-template.js"),
-            context: {
-              id: id,
-            }
-          })
         case 'services':
           return actions.createPage({
             path: uri,
@@ -63,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   });
 
-  const slugs = ['products', 'commercial', 'services']
+  const slugs = ['products', 'services']
   wpPosts.map((post) => {
     const { id, slug, categories } = post;
     const postCategories = categories.nodes
