@@ -10,7 +10,7 @@ const HomepageTemplate = ({ data: { wpPage } }) => {
     const {title, content} = wpPage;
     return (
         <Layout>
-            <StaticImage objectPosition="center" src="../images/JFPSlideShowLargeEquipr.jpg" alt="JF Price" layout="fullWidth" />
+            <StaticImage objectPosition="center" src="../images/slides/JFPSlideShowLargeEquipr.jpg" alt="JF Price" layout="fullWidth" />
             <div style={{background:'#FFFFFF', padding: '0% 2%'}} dangerouslySetInnerHTML={{ __html: content }}></div>
         </Layout>
     );

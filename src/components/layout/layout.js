@@ -117,11 +117,11 @@ const GlobalStyle = createGlobalStyle`
     align-items:center;
     @media(min-width: 1200px) {
       width:auto;
-      margin:0 22dvw;
+      margin:0 16dvw;
     }
     @media(max-width: 992) {
       width:auto;
-      margin:0 6dvw;
+      margin:0 3dvw;
     }
   }
   GatsbyImage {
