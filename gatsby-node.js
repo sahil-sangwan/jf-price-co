@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (isFrontPage) {
       return actions.createPage({
         path: uri,
-        component: require.resolve("./src/templates/default-page-template.js"),
+        component: require.resolve("./src/templates/homepage-template.js"),
         context: {
           id: id,
         },
@@ -35,14 +35,6 @@ exports.createPages = async ({ graphql, actions }) => {
               id: id,
             }
           })
-          case 'contact':
-            return actions.createPage({
-              path: uri,
-              component: require.resolve("./src/templates/contact-page-template.js"),
-              context: {
-                id: id,
-              }
-            })
         default:
           return actions.createPage({
             path: uri,
@@ -59,33 +51,19 @@ exports.createPages = async ({ graphql, actions }) => {
   wpPosts.map((post) => {
     const { id, slug, categories } = post;
     const postCategories = categories.nodes
-    const isExclusive = postCategories.some(category => {
-      const { categorySlug, name } = category;
-      return categorySlug === 'exclusives'
-    })
     const onlyPageCategories = postCategories.filter(category => {
       const { categorySlug, name } = category;
       return slugs.includes(categorySlug)
     })
     onlyPageCategories.map(category => {
       const { categorySlug, name } = category
-      if (categorySlug === 'products' && isExclusive) {
-        return actions.createPage({
-          path: `/${categorySlug}/${slug}`,
-          component: require.resolve(`./src/templates/exclusive-post-template.js`),
-          context: {
-            id: id,
-          }
-        })
-      } else {
-        return actions.createPage({
-          path: `/${categorySlug}/${slug}`,
-          component: require.resolve(`./src/templates/${categorySlug}-post-template.js`),
-          context: {
-            id: id,
-          }
-        })
-      }
+      return actions.createPage({
+        path: `/${categorySlug}/${slug}`,
+        component: require.resolve(`./src/templates/${categorySlug}-post-template.js`),
+        context: {
+          id: id,
+        }
+      })
     })
   });
 };

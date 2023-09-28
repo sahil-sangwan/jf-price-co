@@ -3,9 +3,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import { NavButton } from "../pageNavButton";
 import styled from 'styled-components';
 import { createGlobalStyle } from "styled-components";
-import { AiOutlineInstagram } from "@react-icons/all-files/ai/AiOutlineInstagram";
-import { AiOutlineYoutube } from "@react-icons/all-files/ai/AiOutlineYoutube";
-import { AiOutlineFacebook } from "@react-icons/all-files/ai/AiOutlineFacebook";
 
 const Layout = ({ isHomePage, children }) => {
   const {
